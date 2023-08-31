@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check The Time Here!</title>
+  <link href="index.css" rel="stylesheet">
+  <script type="text/javascript" src="https://livejs.com/live.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+</head>
+<body>
+  <main>
+    <div class="analog-clock">
+      <div class="outer-clock">
+        <div class="number"><h1>12</h1></div>
+        <div class="number"><h1>1</h1></div>
+        <div class="number"><h1>2</h1></div>
+        <div class="number"><h1>3</h1></div>
+        <div class="number"><h1>4</h1></div>
+        <div class="number"><h1>5</h1></div>
+        <div class="number"><h1>6</h1></div>
+        <div class="number"><h1>7</h1></div>
+        <div class="number"><h1>8</h1></div>
+        <div class="number"><h1>9</h1></div>
+        <div class="number"><h1>10</h1></div>
+        <div class="number"><h1>11</h1></div>
+        <div id='hour-hand' class="hour hand"></div>
+        <div id='minute-hand' class="minute hand"></div>
+        <div id='second-hand' class="second hand"></div>
+        <div class="outer center">
+          <div class="inner center">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="time-display">
+      <p data-micromodal-trigger="timezone-modal" id="timezone" class="timezone">timezone</p>
+      <h1 id='time' class="time">time</h1>
+      <p id='date' class="date">date</p>
+    </div>
+   
+  </main>
+  <div id="timezone-modal" aria-hidden="true">
+    <div tabindex="-1" data-micromodal-close>
+      <div role="dialog" aria-labelledby="modal-title" aria-labelledby="modal-title">
+        <header>
+          <h2 id="modal-title">
+            Change Timezone
+          </h2>
+          
+        </header>
+        <div id="modal-content">
+          <select id="timezones" name="timezones">
+          </select>
+          <div class="buttons">
+            <button class="button" onclick="selectTimezone()" aria-label="Apply Timezone" data-micromodal-close>Apply</button>
+            <button class="button" aria-label="Close modal" data-micromodal-close>Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>

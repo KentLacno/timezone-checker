@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@500&display=swap');
+
+:root {
+  --clock-primary-color: black;
+  --clock-secondary-color: #E04221
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family:  "Gluten";
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  z-index: 1;
+  width: 700px;
+  height: 350px;
+  border: 4px solid black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.analog-clock {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  padding-left: 50px;
+}
+
+.outer-clock {
+  border: 5px solid var(--clock-primary-color);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number { 
+  position: absolute;
+  color: var(--clock-primary-color);
+  font-size: .7em;
+}
+
+.hand {
+  position: absolute;
+  background-color: var(--clock-primary-color);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transform-origin:  50% 0%;
+}
+
+.hour {
+  height: 60px;
+  top: 100px;
+  width: 6px;
+}
+
+.minute {
+  height: 75px;
+  top: 100px;
+  width: 5px;
+}
+
+.second {
+  height: 90px;
+  top: 90px;
+  width: 2px;
+  margin-top: 2px;
+  background-color: var(--clock-secondary-color);
+  z-index: 3;
+  transform-origin:  60% 10%;
+}
+
+.center {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outer {
+  background-color: var(--clock-primary-color);
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+
+.inner {
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  background-color: var(--clock-secondary-color);
+}
+
+.time-display {
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: center;
+}
+
+.timezone {
+  color:#ADB5BD;
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.timezone:hover {
+  text-decoration: underline;
+  cursor: pointer
+}
+
+.time {
+  font-size: 5em;
+  margin-bottom: 10px;
+}
+
+.date {
+  font-size: 1em;
+}
+
+#timezone-modal {
+  display: none;
+
+}
+
+#timezone-modal.is-open {
+  z-index: 5;
+  position: absolute;
+  background-color: white;
+  width: 350px;
+  padding: 20px 20px;
+  display: none;
+  border: 4px solid black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+#modal-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+#timezones {
+  width: 80%;
+  height: 30px;
+  border: 3px solid black;
+  border-radius: 8px;
+}
+
+#timezones:focus {
+  outline: none;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 10px;
+}
+
+.button {
+  color: white;
+  border: none;
+  background: none;
+}
+
+.button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    width: 77vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #timezone-modal.is-open {
+    width: 38vw;
+  }
+  .analog-clock, .time-display {
+    padding: 0;
+  }
+  
+  .analog-clock {
+    scale: 0.8;
+  }
+
+  .time-display {
+    margin-top: 170px;
+    scale: 0.8;
+    text-align: center;
+  }
+}
+
